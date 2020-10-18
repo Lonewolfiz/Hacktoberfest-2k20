@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include<string.h>
+
+int main(void) {
+ char a[]="a man, in the boat says : i see 1-2-3 in the sky";
+ char temp[1000];
+ int l=strlen(a);
+ int r=0;
+ for(int i=0;i<l;i++)
+ {
+   if((a[i]>='a' && a[i]<='z') ||  (a[i]>='1' && a[i]<='9'))
+   {
+     temp[r++]=a[i];
+
+   }
+ }
+ int i=0;
+ int j=r-1;
+ while(i<l || j>=0)
+ {
+  
+   if( a[i]==',' || a[i]==' ' || a[i]=='-' || a[i]==':')
+   {
+     printf("%c",a[i]);
+   } 
+   if((a[i]>='a' && a[i]<='z') || (a[i]>='1' && a[i]<='9'))
+   {
+     printf("%c",temp[j--]);
+   }
+  
+   i++;
+
+ }
+
+}
